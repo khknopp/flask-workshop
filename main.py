@@ -53,15 +53,18 @@ db.create_all()
 def main():
     if request.method == "POST":
         if 'current' in request.form:
-            return redirect(url_for("add"))
+            return redirect(url_for("current"))
         elif 'progress' in request.form:
-            return redirect(url_for("all"))
+            return redirect(url_for("progress"))
     return render_template('index.html')
 
 @app.route('/current')
 def current():
     session = Sessions.query.order_by(Sessions.Id.desc()).first()
-    measurements = Measurements.query.filter_by(Session_Id=session.Id).all()
+    try:
+        measurements = Measurements.query.filter_by(Session_Id=session.Id).all()
+    except:
+        measurements = []
     return render_template('current.html', session = session, measurements = measurements)
 
 @app.route('/progress')

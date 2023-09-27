@@ -6,9 +6,9 @@
 
 
 {% block content %}
-  {% for person in people %}
+  {% for session in sessions %}
     <hr/>
-    {{ person }} <br/>
-    {{ person.Name }} is  {{ person.Age }} years old!
+    {{ session }} <br/>
+    {{ session.Id }}, Average score: {{ session.Average }}!
   {% endfor %}
 {% endblock %}

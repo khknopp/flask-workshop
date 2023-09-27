@@ -52,12 +52,10 @@ db.create_all()
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if request.method == "POST":
-        if 'add' in request.form:
+        if 'current' in request.form:
             return redirect(url_for("add"))
-        elif 'all' in request.form:
+        elif 'progress' in request.form:
             return redirect(url_for("all"))
-        elif 'last' in request.form:
-            return redirect(url_for("last"))
     return render_template('index.html')
 
 @app.route('/current')

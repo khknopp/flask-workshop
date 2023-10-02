@@ -13,15 +13,16 @@
         {% endfor %}
      {% endif %}
   {% endwith %}
-  <div id="big">
-    Hello world!
-    <br/><br/>
-    What do you want to do?
-    <br/><br/>
+  <div>
+    <h1>
+      <br/><br/>
+      Please choose what you want to view:
+      <br/><br/>
+    </h1>
   </div>
   <!--- Action Buttons --->
   <form method="post">
-    <input type="submit" name="current" value="View current session" class="active">
-    <input type="submit" name="progress" value="View progress" class="active">
+    <input type="submit" name="current" value="View current session" class="button">
+    <input type="submit" name="progress" value="View progress" class="button">
   </form>
 {% endblock %}

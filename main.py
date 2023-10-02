@@ -10,7 +10,7 @@ from training import *
 
 # Main flask definitions
 app = Flask(__name__)
-app.secret_key = "squishstick"
+app.secret_key = "squishstickprivatekey"
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///database.db'
 
 # Database definition
